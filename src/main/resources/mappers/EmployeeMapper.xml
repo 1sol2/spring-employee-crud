@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ohgiraffers.crud.employee.model.dao.EmployeeMapper">
+
+    <select id="findAllMenu" resultType="com.ohgiraffers.crud.employee.model.dto.EmployeeDTO">
+        SELECT
+           *
+        FROM
+            employee
+        ORDER BY
+            emp_id
+    </select>
+
+    <select id="findCategoryList" resultType="com.ohgiraffers.crud.employee.model.dto.EmployeeDTO">
+        SELECT
+                *
+        FROM
+            employee
+        ORDER BY
+            emp_id
+    </select>
+
+    <insert id="registMenu">
+        INSERT INTO
+            tbl_menu(menu_name, menu_price, category_code, orderable_status)
+        VALUES
+            (#{ menuName }, #{ menuPrice }, #{ categoryCode }, #{ orderableStatus })
+    </insert>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
